@@ -1,4 +1,4 @@
-﻿// ===== PORTFOLIO MAIN JS - Pham Ngoc Hung =====
+// ===== PORTFOLIO MAIN JS - Pham Ngoc Hung =====
 
 // ===== THEME TOGGLE =====
 const themeToggle = document.getElementById('theme-toggle');
@@ -365,72 +365,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
-  updateActiveNav();
-  toggleScrollTop();
-});
-
-// ===== SKILL BARS ON SCROLL =====
-const skillsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.skill-level-fill').forEach(bar => {
-        const level = bar.getAttribute('data-level');
-        if (level) bar.style.width = level;
-      });
-      skillsObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-const skillsSection = document.getElementById('skills');
-if (skillsSection) skillsObserver.observe(skillsSection);
-
-// ===== PROJECT DETAILS DATA =====
-const projectDetails = {
-  shop: {
-    title: 'Website Ban Hang Online',
-    desc: 'He thong thuong mai dien tu xay dung trong mon Hoc phan Web. Cho phep nguoi dung duyet san pham, them gio hang, dat hang. Admin co the quan ly toan bo san pham va don hang.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-    features: ['Hien thi & tim kiem san pham', 'Gio hang va dat hang', 'Quan ly san pham (Admin)', 'Dang ky / Dang nhap nguoi dung', 'Lich su don hang']
-  },
-  java: {
-    title: 'Ung Dung Quan Ly Sinh Vien - Java',
-    desc: 'Ung dung desktop xay dung bang Java Swing ket noi MySQL. Cho phep quan ly toan dien thong tin sinh vien, diem so va xep loai hoc luc.',
-    tech: ['Java', 'Java Swing', 'MySQL', 'JDBC'],
-    features: ['CRUD thong tin sinh vien', 'Tinh GPA tu dong', 'Xep loai: Xuat sac / Gioi / Kha / TB', 'Tim kiem theo nhieu tieu chi', 'Xuat bao cao dang table']
-  },
-  sql: {
-    title: 'He Thong CSDL Quan Ly Thu Vien',
-    desc: 'Du an chuyen sau ve thiet ke va xay dung co so du lieu quan ly thu vien su dung SQL Server. Tap trung vao toi uu hoa truy van va bao mat du lieu.',
-    tech: ['SQL Server', 'T-SQL', 'Stored Procedures', 'Triggers', 'Views'],
-    features: ['Thiet ke schema chuan 3NF', 'Stored Procedures cho nghiep vu', 'Triggers tu dong cap nhat', 'View bao cao thong ke', 'Index toi uu hoa truy van']
-  }
-};
-
-function openProjectDetail(key) {
-  const data = projectDetails[key];
-  if (!data) return;
-  const modal = document.getElementById('project-detail-modal');
-  if (!modal) return;
-  modal.querySelector('.modal-title').textContent = data.title;
-  document.getElementById('pd-desc').textContent = data.desc;
-  document.getElementById('pd-tech').innerHTML = data.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
-  document.getElementById('pd-features').innerHTML = data.features.map(f => `<li>${f}</li>`).join('');
-  openModal('project-detail-modal');
-}
-
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-    }
-  });
-});
 
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
