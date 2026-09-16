@@ -1,0 +1,844 @@
+﻿<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio - Pham Ngoc Hung - Sinh vien Cong nghe Thong tin - Web Developer">
+<title>Pham Ngoc Hung | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">PNH<span>.dev</span></a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
+      <li><a href="#about" class="nav-link">Giới Thiệu</a></li>
+      <li><a href="#education" class="nav-link">Học Vấn</a></li>
+      <li><a href="#skills" class="nav-link">Kỹ Năng</a></li>
+      <li><a href="#featured-project" class="nav-link">Dự Án Nổi Bật</a></li>
+      <li><a href="#experience" class="nav-link">Kinh Nghiệm</a></li>
+      <li><a href="#certificates" class="nav-link">Thành Tích</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="theme-icon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="fas fa-code"></i> Sinh Viên CNTT - ĐH Đại Nam
+        </div>
+        <h1 class="hero-name gradient-text">Phạm Ngọc Hùng</h1>
+        <div class="hero-typing-wrapper">
+          <span class="hero-typing-prefix">Tôi là Web Developer</span>
+          <span class="typing-text" id="typing-text"></span>
+        </div>
+        <p class="hero-slogan">Code not just to run – but to matter.</p>
+        <div class="hero-cta">
+          <a href="#featured-project" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> Xem Dự Án 
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="5" data-suffix="+">5+</div>
+            <div class="hero-stat-label">Dự án</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="10" data-suffix="+">10+</div>
+            <div class="hero-stat-label">Công nghệ</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="3" data-suffix="">3</div>
+            <div class="hero-stat-label">Năm học lập trình</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="1" data-suffix="">1</div>
+            <div class="hero-stat-label">Dự án nổi bật</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-avatar-wrapper">
+        <div class="hero-avatar-ring-2"></div>
+        <div class="hero-avatar-ring"></div>
+        <img src="../img/AnhCaNhan.jpg" alt="Pham Ngoc Hung" class="hero-avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="hero-avatar-placeholder" style="display:none;">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="hero-tech-badges">
+          <span class="tech-badge">HTML/CSS</span>
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Java</span>
+          <span class="tech-badge">MySQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-bar-inner">
+      <div class="stat-item">
+        <div class="stat-number" data-count="5" data-suffix="+">5+</div>
+        <div class="stat-label">Dự án thực hiện</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="10" data-suffix="+">10+</div>
+        <div class="stat-label">Công nghệ đã sử dụng</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="3" data-suffix="">3</div>
+        <div class="stat-label">Năm học lập trình</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="21" data-suffix="">21</div>
+        <div class="stat-label">Tuổi</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SECTION (TIMELINE DỌC KÈM ẢNH) -->
+<section id="about" class="section-padding" style="opacity: 1 !important; visibility: visible !important; min-height: 80vh;">
+  <div class="container">
+    
+    <!-- Tiêu đề mục Giới thiệu -->
+    <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="section-tag"><i class="fas fa-user"></i> Giới thiệu</div>
+      <h2 class="section-title">Hành Trình & <span>Bản Thân</span></h2>
+      <p class="section-subtitle" style="margin: 0.5rem auto 0; max-width: 600px; color: var(--text-secondary);">
+        Khám phá quá trình học tập, đam mê lập trình và mục tiêu phát triển của tôi
+      </p>
+      <div class="section-divider" style="margin: 1rem auto 0;"></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 3.5rem;">
+      
+      <!-- HÀNG 1: Bản thân & Đam mê (Ảnh trái - Chữ phải) -->
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem;">
+        <div style="flex: 1 1 350px; min-width: 280px;">
+          <!-- THAY ẢNH 1 TẠI ĐÂY -->
+          <img src="assets/about-1.png" alt="Đam mê lập trình" 
+               style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"
+               onerror="this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80';">
+        </div>
+        <div style="flex: 1 1 400px;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+            <i class="fas fa-terminal"></i> Khởi Đầu
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">Sinh Viên CNTT & Đam Mê Lập Trình</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            Tôi hiện là sinh viên năm 3 chuyên ngành Công nghệ Thông tin tại Đại học Đại Nam. Hành trình của tôi bắt đầu từ việc tò mò cách các trang web vận hành, dẫn đến niềm đam mê tạo dựng các ứng dụng web thực tế, tối ưu và thẩm mỹ.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <span class="tech-tag">Học hỏi liên tục</span>
+            <span class="tech-tag">Tự nghiên cứu</span>
+            <span class="tech-tag">Đam mê công nghệ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HÀNG 2: Kỹ năng & Dự án (Chữ trái - Ảnh phải) -->
+      <div style="display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 2.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem;">
+        <div style="flex: 1 1 400px;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+            <i class="fas fa-laptop-code"></i> Thực Hành
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">Học Đi Đôi Với Sản Phẩm</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            Không dừng lại ở lý thuyết trên trường, tôi chủ động xây dựng các dự án cá nhân hoàn chỉnh như nền tảng quản lý giải đấu <strong>PNH EFOOTBALL</strong>. Tôi tập trung vào giải quyết các bài toán kỹ thuật từ cấu trúc CSDL MySQL đến API backend và giao diện người dùng.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <span class="tech-tag">Clean Code</span>
+            <span class="tech-tag">UI/UX Hiện đại</span>
+            <span class="tech-tag">Xử lý cơ sở dữ liệu</span>
+            <span class="tech-tag">Xử lý tối ưu hóa các dòng máy</span>
+          </div>
+        </div>
+        <div style="flex: 1 1 350px; min-width: 280px;">
+          <!-- THAY ẢNH 2 TẠI ĐÂY -->
+          <img src="../img/WebCaNhan.jpg" alt="Xây dựng sản phẩm" 
+               style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"
+               onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80';">
+        </div>
+      </div>
+
+      <!-- HÀNG 3: Định hướng & Tương lai (Ảnh trái - Chữ phải) -->
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem;">
+        <div style="flex: 1 1 350px; min-width: 280px;">
+          <!-- THAY ẢNH 3 TẠI ĐÂY -->
+          <img src="assets/about-3.png" alt="Mục tiêu tương lai" 
+               style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"
+               onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80';">
+        </div>
+        <div style="flex: 1 1 400px;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+            <i class="fas fa-rocket"></i> Tương Lai
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">Định Hướng Full-stack Developer</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            Mục tiêu ngắn hạn của tôi là tìm kiếm vị trí thực tập / Fresher Web Developer để tiếp xúc với quy trình làm việc chuyên nghiệp, đồng thời đóng góp giá trị thông qua tư duy giải quyết vấn đề và tinh thần cầu tiến.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 1.25rem;">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Liên hệ ngay</a>
+            <a href="#featured-project" class="btn btn-outline"><i class="fas fa-code-branch"></i> Xem dự án</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EDUCATION SECTION (TIMELINE DỌC KÈM ẢNH) -->
+<section id="education" class="section-padding" style="opacity: 1 !important; visibility: visible !important; min-height: 80vh;">
+  <div class="container">
+    
+    <!-- Tiêu đề mục Học Vấn -->
+    <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="section-tag"><i class="fas fa-graduation-cap"></i> Học Vấn</div>
+      <h2 class="section-title">Quá Trình <span>Học Tập</span></h2>
+      <p class="section-subtitle" style="margin: 0.5rem auto 0; max-width: 600px; color: var(--text-secondary);">
+        Nền tảng kiến thức bài bản tại giảng đường kết hợp lộ trình tự học và nghiên cứu thực chiến
+      </p>
+      <div class="section-divider" style="margin: 1rem auto 0;"></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 3.5rem;">
+      
+      <!-- HÀNG 1: Đại học Đại Nam (Ảnh trái - Chữ phải) -->
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem;">
+        <div style="flex: 1 1 350px; min-width: 280px;">
+          <!-- THAY ẢNH 1: Ảnh trường hoặc hoạt động sinh viên -->
+          <img src="assets/edu-university.png" alt="Đại học Đại Nam" 
+               style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"
+               onerror="this.src='https://channel.mediacdn.vn/428462621602512896/2022/7/6/photo-3-16571171220201132508069.jpg';">
+        </div>
+        <div style="flex: 1 1 400px;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+            <i class="fas fa-calendar-alt"></i> 2024 - Hiện tại (Năm 3)
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Đại Học Đại Nam</h3>
+          <p style="font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Chuyên ngành: Công nghệ Thông tin</p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.25rem;">
+            Tiếp thu hệ thống kiến thức nền tảng vững chắc về khoa học máy tính: Cấu trúc dữ liệu & giải thuật, Lập trình hướng đối tượng (OOP),  Hệ quản trị CSDL .
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">Java OOP</span>
+            <span class="tech-tag">Cơ sở dữ liệu</span>
+            <span class="tech-tag">CTDL & Giải thuật</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HÀNG 2: Tự học & Nghiên cứu Web (Chữ trái - Ảnh phải) -->
+      <div style="display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 2.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem;">
+        <div style="flex: 1 1 400px;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+            <i class="fas fa-laptop-code"></i> 2024 - nay
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Tự Nghiên Cứu & Lập Trình Web</h3>
+          <p style="font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Lộ trình Full-stack Web Development</p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.25rem;">
+            Chủ động tìm kiếm tài liệu quốc tế và tự học các công nghệ web hiện đại. Bắt đầu từ C++ để rèn tư duy logic, sau đó chuyển trọng tâm sang xây dựng giao diện với HTML/CSS/JavaScript và hoàn thiện hệ thống backend với Node.js, REST API.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">HTML / CSS / Taiwin.css / java </span>
+            <span class="tech-tag">JavaScript ES6+</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">React</span>
+          </div>
+        </div>
+        <div style="flex: 1 1 350px; min-width: 280px;">
+          <!-- THAY ẢNH 2: Ảnh bàn làm việc/tự học online -->
+          <img src="assets/edu-self-taught.png" alt="Tự học lập trình web" 
+               style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"
+               onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80';">
+        </div>
+      </div>
+
+      <!-- HÀNG 3: Thời kỳ THPT (Ảnh trái - Chữ phải) -->
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem;">
+        <div style="flex: 1 1 350px; min-width: 280px;">
+          <!-- THAY ẢNH 3: Ảnh kỷ niệm trường cấp 3 hoặc ảnh cá nhân -->
+          <img src="assets/edu-highschool.png" alt="Thời kỳ THPT" 
+               style="width: 100%; height: 260px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"
+               onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';">
+        </div>
+        <div style="flex: 1 1 400px;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+            <i class="fas fa-school"></i> 2020 - 2024
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Trường Trung Học Phổ Thông</h3>
+          <p style="font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Tốt nghiệp THPT</p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.25rem;">
+            Giai đoạn rèn luyện kỹ năng tự giác, tư duy logic và kỹ năng làm việc nhóm. Đây cũng là bước đệm định hướng đam mê đưa tôi tới quyết định theo đuổi ngành Công nghệ Thông tin.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">Tốt nghiệp THPT</span>
+            <span class="tech-tag">Kỹ năng giao tiếp</span>
+            <span class="tech-tag">Định hướng nghề nghiệp</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="section-padding" style="opacity: 1 !important; visibility: visible !important;">
+  <div class="container">
+    
+    <!-- Tiêu đề -->
+    <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+      <div class="section-tag"><i class="fas fa-tools"></i> Kỹ năng</div>
+      <h2 class="section-title">Công Nghệ & <span>Kỹ Năng</span></h2>
+      <p class="section-subtitle" style="margin: 0.5rem auto 0; max-width: 600px; color: var(--text-secondary);">
+        Các công nghệ tôi đã học, thực hành và áp dụng trong các dự án thực tế
+      </p>
+      <div class="section-divider" style="margin: 1rem auto 0;"></div>
+    </div>
+
+    
+
+    <!-- Lưới danh sách Kỹ năng (Đã gỡ class 'reveal' để luôn hiển thị) -->
+    <div class="skills-grid">
+      
+      <!-- ================= FRONTEND ================= -->
+      <div class="skill-card" data-category="frontend">
+        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+        <div class="skill-name">HTML</div>
+        <div class="skill-desc">Semantic HTML, cấu trúc trang web</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="85%" style="width: 85%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <div class="skill-card" data-category="frontend">
+        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+        <div class="skill-name">CSS</div>
+        <div class="skill-desc">Flexbox, Grid, Animation, Responsive</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="80%" style="width: 80%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <div class="skill-card" data-category="frontend">
+        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-desc">ES6+, DOM, Fetch API, Async/Await</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="70%" style="width: 70%;"></div></div>
+        <div class="skill-level-label">Đang phát triển</div>
+      </div>
+
+      <div class="skill-card" data-category="frontend">
+        <div class="skill-icon"><i class="fab fa-react"></i></div>
+        <div class="skill-name">React</div>
+        <div class="skill-desc">Components, Hooks, State management</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="55%" style="width: 55%;"></div></div>
+        <div class="skill-level-label">Đang học</div>
+      </div>
+
+      <div class="skill-card" data-category="frontend">
+        <div class="skill-icon" style="font-size:1.6rem;font-weight:800;color:var(--primary);">TW</div>
+        <div class="skill-name">Tailwind CSS</div>
+        <div class="skill-desc">Utility-first CSS framework</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="70%" style="width: 70%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <!-- ================= BACKEND ================= -->
+      <div class="skill-card" data-category="backend">
+        <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+        <div class="skill-name">Node.js</div>
+        <div class="skill-desc">Express, REST API, Middleware</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="55%" style="width: 55%;"></div></div>
+        <div class="skill-level-label">Cơ bản</div>
+      </div>
+
+      <div class="skill-card" data-category="backend">
+        <div class="skill-icon"><i class="fab fa-java"></i></div>
+        <div class="skill-name">Java</div>
+        <div class="skill-desc">OOP, Swing, JDBC, Collections</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="70%" style="width: 70%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <div class="skill-card" data-category="backend">
+        <div class="skill-icon"><i class="fas fa-hashtag"></i></div>
+        <div class="skill-name">C#</div>
+        <div class="skill-desc">.NET basics, WinForms, OOP</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="50%" style="width: 50%;"></div></div>
+        <div class="skill-level-label">Cơ bản</div>
+      </div>
+
+      <!-- ================= DATABASE ================= -->
+      <div class="skill-card" data-category="database">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+        <div class="skill-name">MySQL</div>
+        <div class="skill-desc">Queries, Join, Index, Stored Procs</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="75%" style="width: 75%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <div class="skill-card" data-category="database">
+        <div class="skill-icon"><i class="fas fa-server"></i></div>
+        <div class="skill-name">SQL Server</div>
+        <div class="skill-desc">T-SQL, Triggers, Views, Backup</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="65%" style="width: 65%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <!-- ================= TOOLS ================= -->
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+        <div class="skill-name">Git & GitHub</div>
+        <div class="skill-desc">Version control, Branching, PR</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="65%" style="width: 65%;"></div></div>
+        <div class="skill-level-label">Khá tốt</div>
+      </div>
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon"><i class="fas fa-wind"></i></div>
+        <div class="skill-name">VS Code</div>
+        <div class="skill-desc">IDE chính, Extensions, Debugging</div>
+        <div class="skill-level-bar"><div class="skill-level-fill" data-level="85%" style="width: 85%;"></div></div>
+        <div class="skill-level-label">Thuần thục</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURED PROJECT SECTION -->
+<section id="featured-project" class="section-padding" style="opacity: 1 !important; visibility: visible !important;">
+  <div class="container featured-project-inner">
+    
+    <!-- Tiêu đề -->
+    <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="featured-badge" style="display: inline-block; margin-bottom: 1rem;"><i class="fas fa-star"></i> Dự án nổi bật</div>
+      <h2 class="section-title">Các Dự Án <span>Thực Tế</span></h2>
+      <p class="section-subtitle" style="margin: 0.5rem auto 0; max-width: 600px; color: var(--text-secondary);">
+        Hệ thống phần mềm và web app hoàn chỉnh được xây dựng để giải quyết các bài toán thực tế
+      </p>
+      <div class="section-divider" style="margin: 1rem auto 0;"></div>
+    </div>
+
+    <!-- ================= DỰ ÁN 1: PNH EFOOTBALL ================= -->
+    <div class="featured-project-grid" style="margin-bottom: 5rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem;">
+      
+      <!-- Cột Ảnh Dự án 1 -->
+      <div class="featured-screenshots">
+        <div class="screenshot-main">
+          <!-- Ảnh chính dự án 1 -->
+          <img src="img/pnh-hero.png" alt="PNH EFOOTBALL - Trang chủ" id="main-screenshot-1"
+               style="width: 100%; border-radius: 8px; border: 1px solid rgba(0, 212, 255, 0.2); object-fit: cover;">
+        </div>
+        <div class="screenshot-thumb-row" style="display: flex; gap: 0.5rem; margin-top: 0.75rem;">
+          <!-- Ảnh thu nhỏ 1: Hero/Trang chủ -->
+          <div class="screenshot-thumb" style="cursor: pointer; flex: 1;" onclick="switchPNHImg('img/pnh-hero.png', this)">
+            <img src="img/pnh-hero.png" alt="Trang chủ" style="width: 100%; height: 56px; object-fit: cover; border-radius: 4px; border: 2px solid var(--primary);">
+          </div>
+          <!-- Ảnh thu nhỏ 2: Danh sách giải đấu -->
+          <div class="screenshot-thumb" style="cursor: pointer; flex: 1;" onclick="switchPNHImg('img/pnh-tournaments.png', this)">
+            <img src="img/pnh-tournaments.png" alt="Giải đấu" style="width: 100%; height: 56px; object-fit: cover; border-radius: 4px; border: 2px solid transparent;">
+          </div>
+          <!-- Ảnh thu nhỏ 3: Quản lý giải đấu -->
+          <div class="screenshot-thumb" style="cursor: pointer; flex: 1;" onclick="switchPNHImg('img/pnh-manage.png', this)">
+            <img src="img/pnh-manage.png" alt="Quản lý giải" style="width: 100%; height: 56px; object-fit: cover; border-radius: 4px; border: 2px solid transparent;">
+          </div>
+          <!-- Ảnh thu nhỏ 4: Hồ sơ cá nhân -->
+          <div class="screenshot-thumb" style="cursor: pointer; flex: 1;" onclick="switchPNHImg('img/pnh-profile.png', this)">
+            <img src="img/pnh-profile.png" alt="Hồ sơ" style="width: 100%; height: 56px; object-fit: cover; border-radius: 4px; border: 2px solid transparent;">
+          </div>
+          <!-- Ảnh thu nhỏ 5: Đăng nhập -->
+          <div class="screenshot-thumb" style="cursor: pointer; flex: 1;" onclick="switchPNHImg('img/pnh-login.png', this)">
+            <img src="img/pnh-login.png" alt="Đăng nhập" style="width: 100%; height: 56px; object-fit: cover; border-radius: 4px; border: 2px solid transparent;">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cột Nội dung Dự án 1 -->
+      <div>
+        <div class="featured-project-title" style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary);">PNH EFOOTBALL</div>
+        <div class="featured-project-subtitle" style="font-size: 1.1rem; color: var(--primary); margin-bottom: 1rem;">Tạo & Quản lý Giải Đấu Game Bóng Đá</div>
+        <p class="featured-project-desc" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+          Dự án web app hoàn chỉnh cho phép người dùng tạo và quản lý các giải đấu bóng đá game (eFootball, FIFA...) 
+          theo nhiều quy mô: từ giải nhỏ đơn giản đến giải lớn phân nhóm phức tạp. 
+          Hệ thống phân quyền rõ ràng giữa Admin, Quản lý giải và Người dùng thường.
+        </p>
+        <ul class="feature-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+          <li><i class="fas fa-check" style="color: var(--primary);"></i> Quản lý đội & cầu thủ</li>
+          <li><i class="fas fa-check" style="color: var(--primary);"></i> Chia bảng tự động</li>
+          <li><i class="fas fa-check" style="color: var(--primary);"></i> Tạo lịch thi đấu</li>
+          <li><i class="fas fa-check" style="color: var(--primary);"></i> Cập nhật KQ real-time</li>
+          <li><i class="fas fa-check" style="color: var(--primary);"></i> Phân quyền chi tiết</li>
+          <li><i class="fas fa-check" style="color: var(--primary);"></i> Thống kê dữ liệu</li>
+        </ul>
+        <div class="project-tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Tailwind CSS</span>
+        </div>
+        <div class="featured-cta" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openModal('pnh-detail-modal')">
+            <i class="fas fa-expand-alt"></i> Xem chi tiết
+          </button>
+          <a href="#" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</section>
+
+
+
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience" class="section-padding" style="opacity: 1 !important; visibility: visible !important;">
+  <div class="container">
+    
+    <!-- Tiêu đề -->
+    <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="section-tag"><i class="fas fa-history"></i> Hành trình</div>
+      <h2 class="section-title">Quá Trình <span>Phát Triển</span></h2>
+      <p class="section-subtitle" style="margin: 0.5rem auto 0; max-width: 600px; color: var(--text-secondary);">
+        Hành trình tích lũy kiến thức từ những dòng code đầu tiên đến việc xây dựng hệ thống hoàn chỉnh
+      </p>
+      <div class="section-divider" style="margin: 1rem auto 0;"></div>
+    </div>
+
+    <!-- Trục thời gian (Đã gỡ class reveal để luôn hiển thị) -->
+    <div class="exp-timeline">
+      
+      <!-- Mốc 1: Năm 1 -->
+      <div class="exp-item">
+        <div class="exp-content" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: 12px;">
+          <div class="exp-year" style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">2024 - 2025 (Năm 1)</div>
+          <div class="exp-title" style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Nhập môn & Xây dựng nền tảng</div>
+          <div class="exp-desc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            Trúng tuyển vào ĐH Đại Nam chuyên ngành CNTT. Bắt đầu làm quen với tư duy lập trình qua C/C++ và Java. Nắm vững các khái niệm Cấu trúc dữ liệu & Giải thuật cơ bản, Lập trình hướng đối tượng (OOP).
+          </div>
+        </div>
+        <div class="exp-dot"><i class="fas fa-code"></i></div>
+        <div class="exp-empty"></div>
+      </div>
+
+      <!-- Mốc 2: Năm 2 -->
+      <div class="exp-item">
+        <div class="exp-empty"></div>
+        <div class="exp-dot"><i class="fas fa-database"></i></div>
+        <div class="exp-content" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: 12px;">
+          <div class="exp-year" style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">2025 - 2026 (Năm 2)</div>
+          <div class="exp-title" style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Khám phá Web & Cơ sở dữ liệu</div>
+          <div class="exp-desc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            Bắt đầu định hướng theo mảng Web. Tự học HTML, CSS, JavaScript và cách thiết kế giao diện (UI/UX). Đồng thời trên trường học chuyên sâu về Hệ quản trị CSDL (MySQL, SQL Server), biết cách thiết kế schema và tối ưu truy vấn.
+          </div>
+        </div>
+      </div>
+
+      <!-- Mốc 3: Năm 3 -->
+      <div class="exp-item">
+        <div class="exp-content" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: 12px;">
+          <div class="exp-year" style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">2026 - 2027 (Năm 3)</div>
+          <div class="exp-title" style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Thực chiến Full-stack & Làm dự án</div>
+          <div class="exp-desc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            Áp dụng kiến thức vào thực tế. Hoàn thiện các dự án lớn như <strong>PNH EFOOTBALL</strong> và <strong>Phần mềm Quản lý Trung tâm Lái xe</strong>. Học thêm về React, Node.js, làm việc nhóm qua Git/GitHub và quy trình phát triển phần mềm (KTPM).
+          </div>
+        </div>
+        <div class="exp-dot"><i class="fas fa-laptop-code"></i></div>
+        <div class="exp-empty"></div>
+      </div>
+
+      <!-- Mốc 4: Hiện tại / Tương lai gần -->
+      <div class="exp-item">
+        <div class="exp-empty"></div>
+        <div class="exp-dot" style="background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary);"><i class="fas fa-rocket"></i></div>
+        <div class="exp-content" style="background: rgba(0, 212, 255, 0.05); border: 1px dashed var(--primary); padding: 1.5rem; border-radius: 12px;">
+          <div class="exp-year" style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Hiện tại</div>
+          <div class="exp-title" style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Sẵn sàng Thực tập (Intern/Fresher)</div>
+          <div class="exp-desc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            Tiếp tục trau dồi các công nghệ mới và cải thiện kỹ năng mềm. Đang chủ động tìm kiếm cơ hội thực tập tại các công ty công nghệ để cọ xát môi trường doanh nghiệp thực tế.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CERTIFICATES -->
+<section id="certificates" class="section-padding" style="opacity: 1 !important; visibility: visible !important;">
+  <div class="container">
+    
+    <!-- Tiêu đề -->
+    <div class="section-header" style="text-align: center; margin-bottom: 3.5rem;">
+      <div class="section-tag"><i class="fas fa-award"></i> Thành tích</div>
+      <h2 class="section-title">Chứng Chỉ & <span>Thành Tích</span></h2>
+      <p class="section-subtitle" style="margin: 0.5rem auto 0; max-width: 600px; color: var(--text-secondary);">
+        Những cột mốc và chứng nhận ghi nhận nỗ lực trong quá trình học tập và phát triển kỹ năng
+      </p>
+      <div class="section-divider" style="margin: 1rem auto 0;"></div>
+    </div>
+
+    <!-- Lưới Chứng chỉ (Đã gỡ class reveal) -->
+    <div class="certs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      
+     
+
+      <!-- Thẻ 2: Thành tích Xây dựng Dự án -->
+      <div class="cert-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; overflow: hidden;">
+        <div class="cert-img-placeholder" style="height: 160px; background: rgba(0, 212, 255, 0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--primary);">
+          <i class="fas fa-trophy" style="font-size: 2.5rem; margin-bottom: 0.5rem;"></i>
+          <span style="font-size: 0.9rem; font-weight: 600;">Dự án xuất sắc</span>
+        </div>
+        
+        <div class="cert-body" style="padding: 1.25rem;">
+          <div class="cert-name" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Xây dựng PNH EFOOTBALL</div>
+          <div class="cert-issuer" style="font-size: 0.9rem; color: var(--primary); margin-bottom: 0.25rem;">Dự án cá nhân quy mô lớn</div>
+          <div class="cert-date" style="font-size: 0.85rem; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> </div>
+        </div>
+      </div>
+
+      <!-- Thẻ 3: Thành tích Học tập Đại học -->
+      <div class="cert-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; overflow: hidden;">
+        <div class="cert-img-placeholder" style="height: 160px; background: rgba(0, 212, 255, 0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--primary);">
+          <i class="fas fa-star" style="font-size: 2.5rem; margin-bottom: 0.5rem;"></i>
+          <span style="font-size: 0.9rem; font-weight: 600;">Học tập</span>
+        </div>
+        
+        <div class="cert-body" style="padding: 1.25rem;">
+          <div class="cert-name" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Nền tảng CNTT Vững chắc</div>
+          <div class="cert-issuer" style="font-size: 0.9rem; color: var(--primary); margin-bottom: 0.25rem;">Đại học Đại Nam (Khoa CNTT)</div>
+          <div class="cert-date" style="font-size: 0.85rem; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> 2024 - Hiện tại</div>
+        </div>
+      </div>
+
+      <!-- Thẻ 4: Kỹ năng Mềm / Làm việc nhóm -->
+      <div class="cert-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; overflow: hidden;">
+        <div class="cert-img-placeholder" style="height: 160px; background: rgba(0, 212, 255, 0.1); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--primary);">
+          <i class="fas fa-users" style="font-size: 2.5rem; margin-bottom: 0.5rem;"></i>
+          <span style="font-size: 0.9rem; font-weight: 600;">Kỹ năng mềm</span>
+        </div>
+        
+        <div class="cert-body" style="padding: 1.25rem;">
+          <div class="cert-name" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Làm việc nhóm hiệu quả</div>
+          <div class="cert-issuer" style="font-size: 0.9rem; color: var(--primary); margin-bottom: 0.25rem;">Các đồ án thực hành tại trường</div>
+          <div class="cert-date" style="font-size: 0.85rem; color: var(--text-muted);"><i class="far fa-calendar-alt"></i> Quán quân KNM nâng cao có kỹ năng giao tiếp và làm vc nhóm tốt </div>
+        </div>
+      </div>
+
+    </div>
+
+    
+    
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">PNH<span style="color:var(--text-primary);">.dev</span></div>
+        <p class="footer-brand-desc">
+          Sinh Viên năm 3 học nghành cntt đại đh đại nam . 
+          Đang trên hành trình trở thành  Full-stack Web Developer.
+          Sẵn sàng thực tập .
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com/" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://facebook.com/" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:pnhung@example.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">Trang</div>
+        <ul class="footer-nav-list">
+          <li><a href="#hero" class="footer-nav-link">Trang chu</a></li>
+          <li><a href="#about" class="footer-nav-link">Gioi thieu</a></li>
+          <li><a href="#education" class="footer-nav-link">Hoc van</a></li>
+          <li><a href="#skills" class="footer-nav-link">Ky nang</a></li>
+          <li><a href="#featured-project" class="footer-nav-link">Du an</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">Khac</div>
+        <ul class="footer-nav-list">
+          <li><a href="#experience" class="footer-nav-link">Kinh nghiem</a></li>
+          <li><a href="#certificates" class="footer-nav-link">Thanh tich</a></li>
+          <li><a href="#cv" class="footer-nav-link">CV</a></li>
+          <li><a href="#contact" class="footer-nav-link">Lien he</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Pham Ngoc Hung. All rights reserved.</div>
+      <div class="footer-made">Made with <span>&hearts;</span> by PNH.dev</div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+<!-- PNH EFOOTBALL DETAIL MODAL -->
+<div class="modal-overlay" id="pnh-detail-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title"><i class="fas fa-futbol" style="color:var(--primary);margin-right:.5rem;"></i> PNH EFOOTBALL - Chi Tiet Du An</div>
+      <button class="modal-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-lightbulb"></i> Y tuong & Muc tieu</div>
+        <p class="detail-desc">
+          PNH EFOOTBALL sinh ra tu nhu cau thuc te: cong dong game bong da (eFootball, FIFA) nguoi Viet Nam 
+          thuong to chuc giai dau nhom ban be nhung khong co cong cu quan ly chuyen nghiep. 
+          Toi quyet dinh tu xay dung mot web app hoan chinh de giai quyet van de nay.
+        </p>
+        <p class="detail-desc" style="margin-top:.75rem;">
+          Muc tieu: Tao mot nen tang ma nguoi choi co the de dang tao giai, moi nguoi tham gia, 
+          theo doi ket qua va bang xep hang theo thoi gian thuc tren ca may tinh lan dien thoai.
+        </p>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-sitemap"></i> Kien truc He thong</div>
+        <div class="arch-grid">
+          <div class="arch-item">
+            <div class="arch-item-title">Frontend</div>
+            <div class="arch-item-desc">React + Tailwind CSS. Giao dien SPA responsive, component-based, state management voi Context API.</div>
+          </div>
+          <div class="arch-item">
+            <div class="arch-item-title">Backend</div>
+            <div class="arch-item-desc">Node.js + Express. REST API, JWT Authentication, middleware bao mat, phan quyen theo role.</div>
+          </div>
+          <div class="arch-item">
+            <div class="arch-item-title">Database</div>
+            <div class="arch-item-desc">MySQL. Schema toi uu voi cac bang: Users, Tournaments, Teams, Matches, Results, Standings.</div>
+          </div>
+          <div class="arch-item">
+            <div class="arch-item-title">Deploy</div>
+            <div class="arch-item-desc">Chay local/VPS. Nginx reverse proxy, PM2 process manager, HTTPS SSL.</div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-list-check"></i> Chuc nang chinh</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Dang ky / Dang nhap / JWT Auth</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Tao giai dau voi nhieu quy mo</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Quan ly doi bong & cau thu</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Chia bang tu dong (vong bang)</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Tao lich thi dau tu dong</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Nhap & chinh sua ket qua tran</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Bang xep hang cap nhat real-time</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Phan quyen Admin / Manager</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Nang cap tai khoan Pro/Ultra</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Tro ly AI ho tro quan ly</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Giao dien mobile responsive</div>
+          <div style="display:flex;gap:.5rem;font-size:.85rem;color:var(--text-secondary);"><i class="fas fa-check" style="color:var(--primary);margin-top:3px;flex-shrink:0;"></i> Thong ke & phan tich du lieu</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-brain"></i> Nhung gi toi da hoc qua du an</div>
+        <p class="detail-desc">
+          Day la du an pha vo gioi han cua toi. Tu viec chi biet HTML/CSS co ban, toi phai tu hoc 
+          Node.js, REST API design, JWT, React hooks, database normalization va nhieu thu nua chi de hoan thanh no. 
+          Kho khan lon nhat la thiet ke logic chia bang, tinh toan bang xep hang va dam bao data consistency.
+        </p>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-exclamation-triangle"></i> Kho Khan & Giai Phap</div>
+        <ul class="challenge-list">
+          <li class="challenge-item">
+            <div class="challenge-title">Logic tinh bang xep hang phuc tap</div>
+            <div class="challenge-desc">Giai quyet bang cach viet stored procedure tinh toan diem, hieu so va head-to-head trong MySQL, dam bao chinh xac du lieu khi nhap ket qua.</div>
+          </li>
+          <li class="challenge-item">
+            <div class="challenge-title">Phan quyen nhieu cap (Admin/Manager/User)</div>
+            <div class="challenge-desc">Thiet ke role-based access control voi JWT claims, middleware kiem tra quyen o moi API endpoint mot cach ro rang.</div>
+          </li>
+          <li class="challenge-item">
+            <div class="challenge-title">Responsive tren dien thoai</div>
+            <div class="challenge-desc">Su dung Tailwind CSS voi mobile-first approach, test tren nhieu kich thuoc man hinh thuc te de dam bao trai nghiem tot nhat.</div>
+          </li>
+        </ul>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+        <a href="https://github.com/" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> Xem GitHub</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Demo Live</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT DETAIL MODAL (for other projects) -->
+<div class="modal-overlay" id="project-detail-modal">
+  <div class="modal-box" style="max-width:600px;">
+    <div class="modal-header">
+      <div class="modal-title" id="pd-title">Chi tiet Du an</div>
+      <button class="modal-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <p id="pd-desc" class="detail-desc" style="margin-bottom:1.25rem;"></p>
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-code"></i> Cong nghe su dung</div>
+        <div id="pd-tech" class="project-tech-tags"></div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title"><i class="fas fa-list"></i> Chuc nang chinh</div>
+        <ul id="pd-features" class="project-features" style="margin:0;"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  function switchPNHImg(src, clickedThumb) {
+    // Đổi ảnh chính
+    document.getElementById('main-screenshot-1').src = src;
+    // Reset border tất cả thumbnail
+    const thumbs = clickedThumb.closest('.screenshot-thumb-row').querySelectorAll('.screenshot-thumb img');
+    thumbs.forEach(img => img.style.border = '2px solid transparent');
+    // Highlight thumbnail đang active
+    clickedThumb.querySelector('img').style.border = '2px solid var(--primary)';
+  }
+</script>
+</body>
+</html>

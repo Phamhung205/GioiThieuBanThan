@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - PNH Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--primary:#00d4ff;--accent:#7c3aed;--bg:#0a0e1a;--bg2:#0f1629;--card:#141e35;--border:rgba(0,212,255,.15);--text:#e2e8f0;--text2:#94a3b8;--muted:#64748b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+/* SIDEBAR */
+.sidebar{background:var(--bg2);border-right:1px solid var(--border);padding:1.5rem 1rem;display:flex;flex-direction:column;gap:.25rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sidebar-logo{font-size:1.2rem;font-weight:800;color:var(--primary);padding:.75rem .5rem 1.5rem;border-bottom:1px solid var(--border);margin-bottom:.75rem}
+.sidebar-logo span{color:var(--text)}
+.nav-item{display:flex;align-items:center;gap:.75rem;padding:.65rem .75rem;border-radius:8px;font-size:.88rem;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;border:none;background:none;width:100%;text-align:left}
+.nav-item:hover,.nav-item.active{background:rgba(0,212,255,.08);color:var(--primary)}
+.nav-item i{width:16px;text-align:center;font-size:.9rem}
+.sidebar-section{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:.75rem .75rem .25rem;margin-top:.5rem}
+/* MAIN */
+.main{padding:2rem;overflow-x:hidden}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.topbar-title{font-size:1.4rem;font-weight:800;color:var(--text)}
+.topbar-actions{display:flex;gap:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.25rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:var(--primary);color:#0a0e1a}
+.btn-primary:hover{background:#00e5ff;box-shadow:0 4px 15px rgba(0,212,255,.4)}
+.btn-outline{background:transparent;color:var(--primary);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--primary);background:rgba(0,212,255,.08)}
+.btn-danger{background:rgba(248,113,113,.1);color:#f87171;border:1px solid rgba(248,113,113,.2)}
+.btn-danger:hover{background:rgba(248,113,113,.2)}
+.btn-sm{padding:.4rem .85rem;font-size:.78rem}
+/* STATS CARDS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;align-items:center;gap:1rem}
+.stat-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.stat-icon.blue{background:rgba(0,212,255,.1);color:var(--primary)}
+.stat-icon.purple{background:rgba(124,58,237,.1);color:#a855f7}
+.stat-icon.green{background:rgba(34,197,94,.1);color:#22c55e}
+.stat-icon.yellow{background:rgba(234,179,8,.1);color:#eab308}
+.stat-num{font-size:1.6rem;font-weight:800;color:var(--text)}
+.stat-lbl{font-size:.78rem;color:var(--muted);margin-top:.15rem}
+/* PANEL */
+.panel{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.panel-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.panel-title{font-size:.95rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:.5rem}
+.panel-title i{color:var(--primary)}
+.panel-body{padding:1.25rem}
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{text-align:left;padding:.6rem .75rem;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:.65rem .75rem;border-bottom:1px solid rgba(0,212,255,.06);color:var(--text2)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(0,212,255,.03);color:var(--text)}
+/* FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-label{font-size:.8rem;font-weight:600;color:var(--text2)}
+.form-control{padding:.65rem .9rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.88rem;font-family:inherit;outline:none;transition:all .2s;resize:vertical}
+.form-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,212,255,.08)}
+.full{grid-column:1/-1}
+/* BADGE */
+.badge{display:inline-block;font-size:.72rem;font-weight:600;padding:.2rem .6rem;border-radius:999px}
+.badge-success{background:rgba(34,197,94,.1);color:#22c55e}
+.badge-info{background:rgba(0,212,255,.1);color:var(--primary)}
+.badge-warning{background:rgba(234,179,8,.1);color:#eab308}
+.section-tabs{display:none}
+.section-tabs.active{display:block}
+</style>
+</head>
+<body>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">PNH<span>.dev</span> <span style="font-size:.7rem;color:var(--muted);display:block;font-weight:400;margin-top:.15rem;">Admin Panel</span></div>
+  <div class="sidebar-section">Quan ly</div>
+  <button class="nav-item active" onclick="showSection('dashboard')"><i class="fas fa-th-large"></i> Dashboard</button>
+  <button class="nav-item" onclick="showSection('personal')"><i class="fas fa-user"></i> Thong tin ca nhan</button>
+  <button class="nav-item" onclick="showSection('skills')"><i class="fas fa-tools"></i> Ky nang</button>
+  <button class="nav-item" onclick="showSection('projects')"><i class="fas fa-folder"></i> Du an</button>
+  <button class="nav-item" onclick="showSection('certs')"><i class="fas fa-award"></i> Chung chi</button>
+  <button class="nav-item" onclick="showSection('experience')"><i class="fas fa-history"></i> Kinh nghiem</button>
+  <div class="sidebar-section">He thong</div>
+  <button class="nav-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Dang xuat</button>
+  <a href="../index.html" class="nav-item" style="text-decoration:none;"><i class="fas fa-eye"></i> Xem Portfolio</a>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+  <!-- DASHBOARD -->
+  <div id="sec-dashboard" class="section-tabs active">
+    <div class="topbar">
+      <div class="topbar-title">Dashboard</div>
+      <div class="topbar-actions">
+        <button class="btn btn-outline btn-sm"><i class="fas fa-sync"></i> Lam moi</button>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-icon blue"><i class="fas fa-folder"></i></div><div><div class="stat-num">5</div><div class="stat-lbl">Du an</div></div></div>
+      <div class="stat-card"><div class="stat-icon purple"><i class="fas fa-tools"></i></div><div><div class="stat-num">12</div><div class="stat-lbl">Ky nang</div></div></div>
+      <div class="stat-card"><div class="stat-icon green"><i class="fas fa-award"></i></div><div><div class="stat-num">4</div><div class="stat-lbl">Chung chi</div></div></div>
+      <div class="stat-card"><div class="stat-icon yellow"><i class="fas fa-history"></i></div><div><div class="stat-num">6</div><div class="stat-lbl">Timeline items</div></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title"><i class="fas fa-info-circle"></i> Thong tin nhanh</div></div>
+        <div class="panel-body">
+          <table>
+            <tr><th>Muc</th><th>Gia tri</th></tr>
+            <tr><td>Ho ten</td><td>Pham Ngoc Hung</td></tr>
+            <tr><td>Truong</td><td>DH Dai Nam</td></tr>
+            <tr><td>Nam hoc</td><td>Nam 3</td></tr>
+            <tr><td>Du an noi bat</td><td>PNH EFOOTBALL</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-header"><div class="panel-title"><i class="fas fa-tasks"></i> Tac vu nhanh</div></div>
+        <div class="panel-body" style="display:flex;flex-direction:column;gap:.75rem;">
+          <button class="btn btn-outline" style="justify-content:flex-start;" onclick="showSection('projects')"><i class="fas fa-plus"></i> Them du an moi</button>
+          <button class="btn btn-outline" style="justify-content:flex-start;" onclick="showSection('skills')"><i class="fas fa-plus"></i> Them ky nang</button>
+          <button class="btn btn-outline" style="justify-content:flex-start;" onclick="showSection('certs')"><i class="fas fa-plus"></i> Them chung chi</button>
+          <button class="btn btn-primary" style="justify-content:flex-start;" onclick="window.open('../index.html')"><i class="fas fa-eye"></i> Xem Portfolio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSONAL -->
+  <div id="sec-personal" class="section-tabs">
+    <div class="topbar"><div class="topbar-title">Thong tin Ca nhan</div><button class="btn btn-primary" onclick="savePersonal()"><i class="fas fa-save"></i> Luu</button></div>
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title"><i class="fas fa-user"></i> Chinh sua thong tin</div></div>
+      <div class="panel-body">
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label">Ho ten</label><input class="form-control" value="Pham Ngoc Hung"></div>
+          <div class="form-group"><label class="form-label">Email</label><input class="form-control" type="email" value="pnhung@example.com"></div>
+          <div class="form-group"><label class="form-label">So dien thoai</label><input class="form-control" value="+84 xxx xxx xxx"></div>
+          <div class="form-group"><label class="form-label">GitHub</label><input class="form-control" value="github.com/PhamNgocHung"></div>
+          <div class="form-group"><label class="form-label">Facebook</label><input class="form-control" value="facebook.com/PhamNgocHung"></div>
+          <div class="form-group"><label class="form-label">Dia chi</label><input class="form-control" value="Ha Noi, Viet Nam"></div>
+          <div class="form-group full"><label class="form-label">Slogan</label><input class="form-control" value="Code not just to run - but to matter."></div>
+          <div class="form-group full"><label class="form-label">Gioi thieu ban than</label><textarea class="form-control" rows="4">Sinh vien nam 3 Cong nghe Thong tin tai DH Dai Nam. Yeu thich lap trinh web va xay dung cac san pham thuc te.</textarea></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="sec-skills" class="section-tabs">
+    <div class="topbar"><div class="topbar-title">Quan ly Ky Nang</div><button class="btn btn-primary" onclick="addSkill()"><i class="fas fa-plus"></i> Them ky nang</button></div>
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title"><i class="fas fa-tools"></i> Danh sach Ky nang</div></div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Ten ky nang</th><th>Nhom</th><th>Muc do</th><th>Trang thai</th><th>Hanh dong</th></tr>
+          <tr><td>HTML5</td><td>Frontend</td><td>85%</td><td><span class="badge badge-success">Hoat dong</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>CSS3</td><td>Frontend</td><td>80%</td><td><span class="badge badge-success">Hoat dong</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>JavaScript</td><td>Frontend</td><td>70%</td><td><span class="badge badge-success">Hoat dong</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>React</td><td>Frontend</td><td>55%</td><td><span class="badge badge-warning">Dang hoc</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>Java</td><td>Backend</td><td>70%</td><td><span class="badge badge-success">Hoat dong</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>MySQL</td><td>Database</td><td>75%</td><td><span class="badge badge-success">Hoat dong</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>Node.js</td><td>Backend</td><td>55%</td><td><span class="badge badge-info">Co ban</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="sec-projects" class="section-tabs">
+    <div class="topbar"><div class="topbar-title">Quan ly Du An</div><button class="btn btn-primary" onclick="addProject()"><i class="fas fa-plus"></i> Them du an</button></div>
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title"><i class="fas fa-folder"></i> Danh sach Du an</div></div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Ten du an</th><th>Loai</th><th>Cong nghe</th><th>Trang thai</th><th>Hanh dong</th></tr>
+          <tr><td><strong>PNH EFOOTBALL</strong></td><td><span class="badge badge-success">Noi bat</span></td><td>React, Node.js, MySQL</td><td><span class="badge badge-success">Hoan thanh</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button></td></tr>
+          <tr><td>Website Ban Hang</td><td><span class="badge badge-info">Hoc tap</span></td><td>HTML, PHP, MySQL</td><td><span class="badge badge-success">Hoan thanh</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>Quan Ly Sinh Vien</td><td><span class="badge badge-info">Hoc tap</span></td><td>Java Swing, MySQL</td><td><span class="badge badge-success">Hoan thanh</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>CSDL Thu Vien</td><td><span class="badge badge-info">Hoc tap</span></td><td>SQL Server, T-SQL</td><td><span class="badge badge-success">Hoan thanh</span></td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTS -->
+  <div id="sec-certs" class="section-tabs">
+    <div class="topbar"><div class="topbar-title">Chung Chi & Thanh Tich</div><button class="btn btn-primary"><i class="fas fa-plus"></i> Them chung chi</button></div>
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title"><i class="fas fa-award"></i> Danh sach Chung chi</div></div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Ten chung chi</th><th>Don vi cap</th><th>Nam</th><th>Hanh dong</th></tr>
+          <tr><td>Web Development Fundamentals</td><td>Khoa hoc Online</td><td>2023</td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+          <tr><td>Hoan thanh PNH EFOOTBALL</td><td>Du an ca nhan</td><td>2024</td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="sec-experience" class="section-tabs">
+    <div class="topbar"><div class="topbar-title">Timeline Kinh Nghiem</div><button class="btn btn-primary"><i class="fas fa-plus"></i> Them moc</button></div>
+    <div class="panel">
+      <div class="panel-header"><div class="panel-title"><i class="fas fa-history"></i> Timeline</div></div>
+      <div class="panel-body">
+        <table>
+          <tr><th>Nam</th><th>Su kien</th><th>Mo ta</th><th>Hanh dong</th></tr>
+          <tr><td>2021-2022</td><td>Bat dau hoc code</td><td>Tu hoc HTML, CSS, JS</td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button></td></tr>
+          <tr><td>2022</td><td>Vao DH Dai Nam</td><td>Chuyen nganh CNTT</td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button></td></tr>
+          <tr><td>2024</td><td>Xay dung PNH EFOOTBALL</td><td>Du an lon nhat</td><td><button class="btn btn-outline btn-sm"><i class="fas fa-edit"></i></button></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+// Auth check
+if (!sessionStorage.getItem('pnh-admin')) {
+  window.location.href = 'login.html';
+}
+
+function showSection(id) {
+  document.querySelectorAll('.section-tabs').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function logout() {
+  sessionStorage.removeItem('pnh-admin');
+  window.location.href = 'login.html';
+}
+
+function savePersonal() {
+  alert('Da luu thong tin thanh cong! (Phan backend se tich hop sau)');
+}
+
+function addSkill() {
+  alert('Chuc nang them ky nang se duoc tich hop voi backend sau!');
+}
+
+function addProject() {
+  alert('Chuc nang them du an se duoc tich hop voi backend sau!');
+}
+</script>
+</body>
+</html>

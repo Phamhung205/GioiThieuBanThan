@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login - PNH Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--primary:#00d4ff;--accent:#7c3aed;--bg:#0a0e1a;--card:#141e35;--border:rgba(0,212,255,.15);--text:#e2e8f0;--muted:#64748b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);background-size:40px 40px}
+.login-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2.5rem;width:100%;max-width:420px;box-shadow:0 0 50px rgba(0,212,255,.1)}
+.login-logo{text-align:center;margin-bottom:2rem}
+.login-logo-text{font-size:1.8rem;font-weight:900;color:var(--primary)}
+.login-logo-text span{color:var(--text)}
+.login-logo-sub{font-size:.85rem;color:var(--muted);margin-top:.25rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:.85rem;font-weight:600;color:#94a3b8;margin-bottom:.5rem}
+.form-input{width:100%;padding:.8rem 1rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.92rem;font-family:inherit;outline:none;transition:all .2s}
+.form-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,212,255,.1)}
+.form-input::placeholder{color:var(--muted)}
+.btn-login{width:100%;padding:.85rem;background:var(--primary);color:#0a0e1a;font-size:1rem;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.btn-login:hover{background:#00e5ff;box-shadow:0 8px 25px rgba(0,212,255,.4)}
+.error-msg{color:#f87171;font-size:.82rem;text-align:center;margin-top:1rem;display:none}
+.back-link{text-align:center;margin-top:1.5rem;font-size:.85rem;color:var(--muted)}
+.back-link a{color:var(--primary);transition:opacity .2s}
+.back-link a:hover{opacity:.8}
+</style>
+</head>
+<body>
+<div class="login-box">
+  <div class="login-logo">
+    <div class="login-logo-text">PNH<span>.dev</span></div>
+    <div class="login-logo-sub"><i class="fas fa-shield-alt"></i> Admin Portal</div>
+  </div>
+  <form id="login-form">
+    <div class="form-group">
+      <label class="form-label" for="admin-user"><i class="fas fa-user"></i> Ten dang nhap</label>
+      <input type="text" id="admin-user" class="form-input" placeholder="admin">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="admin-pass"><i class="fas fa-lock"></i> Mat khau</label>
+      <input type="password" id="admin-pass" class="form-input" placeholder="••••••••">
+    </div>
+    <button type="submit" class="btn-login">
+      <i class="fas fa-sign-in-alt"></i> Dang Nhap
+    </button>
+    <div class="error-msg" id="login-error">Ten dang nhap hoac mat khau khong dung!</div>
+  </form>
+  <div class="back-link"><a href="../index.html"><i class="fas fa-arrow-left"></i> Quay lai Portfolio</a></div>
+</div>
+<script>
+document.getElementById('login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const u = document.getElementById('admin-user').value;
+  const p = document.getElementById('admin-pass').value;
+  if (u === 'admin' && p === 'pnh2024') {
+    sessionStorage.setItem('pnh-admin', 'true');
+    window.location.href = 'index.html';
+  } else {
+    document.getElementById('login-error').style.display = 'block';
+  }
+});
+</script>
+</body>
+</html>
